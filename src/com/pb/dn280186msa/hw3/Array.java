@@ -13,15 +13,15 @@ public class Array {
 
         System.out.println("Введите 10 целых чисел");
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < array.length; i++) {
             array[i] = scan.nextInt();
         }
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
-            sum_array = sum_array + array[i];
+            sum_array += array[i];
             if (array[i] > 0) {
-                count_array = count_array + 1;
+                count_array ++;
             }
         }
 
@@ -43,7 +43,7 @@ public class Array {
             }
         }
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
         }
 
