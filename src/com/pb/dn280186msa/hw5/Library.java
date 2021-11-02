@@ -3,19 +3,29 @@ package com.pb.dn280186msa.hw5;
 public class Library {
     public static void main(String[] args) {
 
-        Reader reader = new Reader();
-        Book book = new Book();
+        Book[] booksArray = new Book[3];
+        Reader[] readersArray = new Reader[3];
 
-        Book[] booksArray = new Book[4];
-        Reader[] readersArray = new Reader[4];
+        booksArray[0] = new Book("Приключение", "Иванов И. И.", 2020);
+        booksArray[1] = new Book("Словарь", "Сидоров А. В.", 1980);
+        booksArray[2] = new Book("Энциклопедия", "Гусев К. В.", 2010);
 
-        booksArray[0] = new Book();
+        readersArray[0] = new Reader("Петров В. В.", 123456, "Инж", "20.01.2001", 123546);
+        readersArray[1] = new Reader("Петров В. В.", 123456, "Инж", "20.01.2001", 123546);
+        readersArray[2] = new Reader("Петров В. В.", 123456, "Инж", "20.01.2001", 123546);
 
-        System.out.println(booksArray[0]);
+        readersArray[0].takeBook(3);
+        readersArray[0].takeBook("Приключения","Словарь","Энциклопедия");
 
-        /*
-        reader.takeBook(3);
-        reader.takeBook("Приключения","Словарь","Энциклопедия");
-*/
+        for (int i = 0; i < readersArray.length; i++)
+        {
+        System.out.println(booksArray[i].getInfo());
+        }
+
+        for (int i = 0; i < readersArray.length; i++)
+        {
+            System.out.println(readersArray[i].getInfo());
+        }
+
     }
 }
