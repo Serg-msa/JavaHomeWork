@@ -28,24 +28,24 @@ public class Anagram {
   if (userText1S.equalsIgnoreCase(userText2S)) {
    Anagram_result = "Анаграмма";
   } else { Anagram_result = "Не анаграмма";
-     }
-    return Anagram_result;
+  }
+  return Anagram_result;
  }
 
-    public static void main(String[] args) {
+ public static void main(String[] args) {
 
-       Scanner scan = new Scanner(System.in);
+  Scanner scan = new Scanner(System.in);
 
-        String userText1;
-        String userText2;
+  String userText1;
+  String userText2;
 
-        System.out.println("Введите текст 1");
-        userText1 = scan.nextLine();
-        System.out.println("Введите текст 2");
-        userText2 = scan.nextLine();
+  System.out.println("Введите текст 1");
+  userText1 = scan.nextLine();
+  System.out.println("Введите текст 2");
+  userText2 = scan.nextLine();
 
-     String result = Anagram_(userText1, userText2);
-     System.out.println(result);
+  String result = Anagram_(userText1, userText2);
+  System.out.println(result);
 
-    }
+ }
 }
