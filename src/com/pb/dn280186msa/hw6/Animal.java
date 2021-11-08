@@ -1,9 +1,11 @@
 package com.pb.dn280186msa.hw6;
 
+import java.util.Objects;
+
 public class Animal {
-        String name;
-        String food;
-        String location;
+    String name;
+    String food;
+    String location;
 
     public String getName() {
         return name;
@@ -35,29 +37,41 @@ public class Animal {
         this.location = location;
     }
 
-    public void sleep(){
-      System.out.println(name + " cпит");
+    public void sleep() {
+        System.out.println(name + " cпит");
     }
 
-    public void eat(){
+    public void eat() {
         System.out.println(name + " кушает");
     }
 
-    public void makeNoise(){
+    public void makeNoise() {
         System.out.println(name);
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "name='" + name + '\'' +
+                ", food='" + food + '\'' +
+                ", location='" + location + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return Objects.equals(name, animal.name) && Objects.equals(food, animal.food) && Objects.equals(location, animal.location);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, food, location);
     }
 }
 
 
 
-    /*
 
-        Создайте класс Veterinarian (Ветеринар), в котором определите метод void treatAnimal(Animal animal).
-        Пусть этот метод печатает на экран food и location пришедшего на прием животного.
-        Объект класса Veterinarian создайте с помощью рефлексии.
-
-        Создайте класс VetСlinic в его методе main создайте массив типа Animal, в который запишите животных всех имеющихся у вас типов.
-        В цикле отправляйте животных на прием к ветеринару.
-
-
-*/

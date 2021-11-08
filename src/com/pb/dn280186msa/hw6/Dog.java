@@ -30,4 +30,28 @@ public class Dog  extends Animal {
         System.out.println(name + " говорит Гав");
     }
 
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "name='" + name + '\'' +
+                ", food='" + food + '\'' +
+                ", location='" + location + '\'' +
+                ", tail=" + tail +
+                ", security=" + security +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Dog)) return false;
+        if (!super.equals(o)) return false;
+        Dog dog = (Dog) o;
+        return tail == dog.tail && security == dog.security;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), tail, security);
+    }
 }

@@ -35,9 +35,17 @@ public class Horse extends Animal {
 
 
     @Override
+    public void makeNoise() {
+        System.out.println(name + " говорит Иго-го");
+    }
+
+    @Override
     public String toString() {
         return "Horse{" +
-                "sport=" + sport +
+                "name='" + name + '\'' +
+                ", food='" + food + '\'' +
+                ", location='" + location + '\'' +
+                ", sport=" + sport +
                 ", pony=" + pony +
                 '}';
     }
@@ -45,18 +53,14 @@ public class Horse extends Animal {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Horse)) return false;
+        if (!super.equals(o)) return false;
         Horse horse = (Horse) o;
         return sport == horse.sport && pony == horse.pony;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sport, pony);
-    }
-
-    @Override
-    public void makeNoise() {
-        System.out.println(name + " говорит Иго-го");
+        return Objects.hash(super.hashCode(), sport, pony);
     }
 }
