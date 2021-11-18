@@ -16,8 +16,8 @@ public enum Size {
         EuroSize = euroSize;
     }
 
-    public String getDescription() {
-      return Description;
+    void getDescription(String size) {
+      this.Description = size;
     }
 
     public int getEuroSize() {
