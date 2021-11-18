@@ -2,26 +2,33 @@ package com.pb.dn280186msa.hw7;
 
 public enum Size {
 
-    XXS("Детский размер", 32),
-    XS("Взрослый размер", 34),
-    S("Взрослый размер", 36),
-    M ("Взрослый размер", 38),
-    L ("Взрослый размер", 40);
+    XXS("XXS","Детский размер", 32),
+    XS("XS","Взрослый размер", 34),
+    S("S","Взрослый размер", 36),
+    M ("M","Взрослый размер", 38),
+    L ("L","Взрослый размер", 40);
 
+    String Size;
     String Description;
     int EuroSize;
 
-    Size(String description, int euroSize) {
-        Description = description;
-        EuroSize = euroSize;
-    }
-
-    void getDescription(String size) {
-      this.Description = size;
+    public String getDescription() {
+        return Description;
     }
 
     public int getEuroSize() {
         return EuroSize;
     }
 
+    Size(String size, String description, int euroSize) {
+        Size = size;
+        Description = description;
+        EuroSize = euroSize;
+    }
+
+    @Override
+    public String toString() {
+        return  Size + " (" + Description + "), " + "Европейский - " + EuroSize;
+    }
 }
+
