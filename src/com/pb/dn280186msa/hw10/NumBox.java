@@ -1,11 +1,11 @@
 package com.pb.dn280186msa.hw10;
 
-public class NumBox <T extends Num> {
+public class NumBox <T extends Number> {
 
     private final T[] numerics;
 
     public NumBox(int size) {
-        numerics = (T[]) new Num[size];
+        numerics = (T[]) new Number[size];
     }
 
     public void add(int index, T numeric) {
@@ -26,13 +26,12 @@ public class NumBox <T extends Num> {
         }
         System.out.println(i);
     }
-
     public void average() {
         int sum = 0;
         int i = 0;
         for (T x: numerics) {
             if (x != null) {
-                sum = sum + x.n;
+                sum += x.intValue();
                 i++;
             }
             else break;
@@ -44,7 +43,7 @@ public class NumBox <T extends Num> {
         int sum = 0;
         for (T x: numerics) {
             if (x != null) {
-                sum = sum + x.n;
+                sum += x.intValue();
             }
             else break;
         }
@@ -55,8 +54,8 @@ public class NumBox <T extends Num> {
         int s = 0;
         for (T x: numerics) {
             if (x != null) {
-                if (s < x.n) {
-                    s = x.n;
+                if (s < x.intValue()) {
+                    s = x.intValue();
                 }
             }
             else break;
@@ -64,5 +63,8 @@ public class NumBox <T extends Num> {
         System.out.println(s);
     }
 
+    public void println() {
+          for (T x: numerics) System.out.println(x.intValue());
+    }
 }
 
