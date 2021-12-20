@@ -59,7 +59,19 @@ public class Person {
                 this.dateMod = LocalDateTime.now();
         }
 
+        public String toString_FIO() {
+                return FIO;
+        }
 
+        @Override
+        public String toString() {
+                return
+                        "FIO='" + FIO + '\'' +
+                        ", fBirth=" + fBirth +
+                        ", phone='" + phone + '\'' +
+                        ", local='" + local + '\'' +
+                        ", dateMod=" + dateMod ;
+        }
 }
 
 
